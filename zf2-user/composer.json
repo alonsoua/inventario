@@ -1,0 +1,27 @@
+{
+    "name": "jhonmike/zf2-user",
+    "description": "Module User and Authentication",
+    "type": "library",
+    "keywords": ["user","register","delete","authentication","login","logout","doctrine","zend"],
+    "homepage": "https://github.com/jhonmike/Zf2User",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jhon Mike Soares",
+            "email": "developer@jhonmike.com.br",
+            "homepage": "http://www.jhonmike.com.br",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "jhonmike/zf2-base": "dev-master",
+        "jhonmike/zf2-acl": "dev-master",
+        "hounddog/doctrine-data-fixture-module": "0.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Zf2User": "src"
+        }
+    }
+}

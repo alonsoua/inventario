@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-lg-12">
+      <h1 class="page-header">
+          <?php echo $this->translate('Control de Perfiles') ?>
+      </h1>
+  </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-fw fa-tasks"></i> Nuevo Perfil</h3>
+            </div>
+            <div class="panel-body">
+            <?php
+                $form = $this->form;
+                $form->setAttribute('action',$this->url('acl-all/default',array('controller'=>'role','action'=>'register','id'=>$this->id)));
+                $form->prepare();
+            ?>
+            <?php echo $this->form()->openTag($form); ?>
+            <?php echo $this->formHidden($form->get('id')); ?>
+            <div class="row">
+                     <div class="col-md-6">
+                       <div class="col-md-12">
+                             <div class="form-group">
+                                 <label><?php echo $this->translate($this->formLabel($form->get('name'))); ?></label>
+                                 <?php echo $this->formInput($form->get('name')); ?>
+                             </div>
+                             <div class="form-group">
+                                 <label><?php echo $this->translate($this->formLabel($form->get('layout'))); ?></label>
+                                 <?php echo $this->formInput($form->get('layout')); ?>
+                             </div>
+                             <div class="form-group">
+                                 <label><?php echo $this->translate($this->formLabel($form->get('redirect'))); ?></label>
+                                 <?php echo $this->formInput($form->get('redirect')); ?>
+                             </div>
+                             <div class="form-group">
+                                 <label><?php echo $this->translate($this->formLabel($form->get('parent'))); ?></label>
+                                 <?php echo $this->formSelect($form->get('parent')); ?>
+                             </div>
+                             <div class="form-group">
+                                <?php echo $this->formCheckbox($form->get('developer')); ?>
+                                <?php echo $this->translate($this->formLabel($form->get('developer'))); ?>
+                             </div>
+                             <div class="form-group">
+                                <?php echo $this->formButton()->openTag($form->get('submit')); ?>
+                                    <i class="fa fa-check"></i> <?php echo $this->translate($form->get('submit')->getValue()); ?>
+                                <?php echo $this->formButton()->closeTag(); ?>
+                             </div>
+                       </div>
+                      <?php echo $this->form()->closeTag(); ?>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
